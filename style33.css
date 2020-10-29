@@ -1,0 +1,77 @@
+*{
+	font-family:sans-seriff;
+	font-size:16;
+}
+body{
+    background-image:url(Wallpaper.jpg);
+	background-position:center;
+	background-size:cover;
+}
+.form{
+	height:100%;
+	width:100%;
+    
+    position:absolute;
+    margin: 0 auto;
+}
+.u1 li{
+    float: left;
+    padding-left:15px;
+    list-style-type:none;
+    border-style: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.u1 li a:hover{
+    color: red;
+}
+.f1{
+    height: 50px;
+    width: 1100px;
+    float:left;
+    border: 2px solid powderblue;
+    background-color: lightblue;
+}
+.f2{
+    height: 500px;
+    width: 498px;
+    float:left;
+    border: 2px solid powderblue;
+    background-color: white;
+}
+.f3{
+    height: 500px;
+    width: 498px;
+    float:left;
+    border: 2px solid powderblue;
+    background-color: white;
+}
+.f4{
+    height: 500px;
+    width: 498px;
+    float:left;
+    border: 2px solid powderblue;
+    background-color: white;
+}
+#mywork{
+    height: 25px;
+    width: 498px;
+    border: 2px solid powderblue;
+    color:black;
+    box-shadow: powderblue;
+    background-color: lightblue;
+}
+#heading{
+    display: inline;
+    padding-left: 2px;
+}
+#space1{
+    padding-left: 20px;
+}
+#space2{
+    padding-left: 20px;
+    box-shadow: powderblue;
+}

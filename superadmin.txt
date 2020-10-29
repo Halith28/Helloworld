@@ -1,0 +1,95 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import {API_BASE_URL} from '../../constants/apiContants';
+import { useForm } from "react-hook-form";
+// import './Application.css';
+
+function SuperAdmin(props) {
+	
+		  const [doclist, setdoclist] = useState([]);
+          const [check, setcheck] = useState("");
+		
+			const {reset} = useForm({mode: "onBlur",});
+    // function onSubmit(data) {
+    //     axios.put(API_BASE_URL+'logg', data)
+    //         .then(function (response) {
+                
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
+
+	useEffect(() => {
+		retrieveUsers();
+	  }, [check]);
+	  
+	  const retrieveUsers = () => {
+		axios.get(API_BASE_URL+'login')
+		  .then(response => {
+			  console.log(response.data)
+            setdoclist(response.data)
+		  })
+		  .catch(e => {
+			console.log(e);
+		  });
+	  };
+	//   console.log(doclist)
+	  
+	  
+	  const accessUsers = (id) => {
+          console.log(id)
+		axios.put(API_BASE_URL+'giveaccess/'+id, id)
+		  .then(response => {
+			console.log(response.data);
+		  })
+		  .catch(e => {
+			console.log(e);
+		  });
+	  };
+	  
+	  const denyUsers = (id) => {
+		console.log(id)
+	  axios.put(API_BASE_URL+'denyaccess/'+id, id)
+		.then(response => {
+		  console.log(response.data);
+		})
+		.catch(e => {
+		  console.log(e);
+		});
+	};
+      
+    return(
+        <div className="card col-12 col-lg-4 login-card mt-2">
+            <p className="card-header" style={{ backgroundColor: '#007bff',color:'white',fontSize:'20px'}} >
+			<strong>Users List</strong>
+		  </p>
+		<table  style={{ backgroundColor: '#ccdfff'}}>
+    		<thead>
+				<tr style={{backgroundColor:'#ccddfff'}}>
+				<td></td>
+				<td></td>
+				<td>Email</td>
+				<td>Access</td>
+				</tr>
+        	
+    		</thead>
+			<tbody>
+  			{
+    		doclist.map((doctors, index) => (
+        		<tr  key={doctors.id}>
+				<td><button className="btn btn-success" onClick={() => accessUsers(doctors.id)}><i className="fa fa-edit " style={{fontSize:"16px"}}>Access</i></button></td> 
+				<td><button className="btn btn-danger" onClick={() => denyUsers(doctors.id)}><i className="fa fa-trash ">Deny</i></button></td>
+				<td> {doctors.email}</td>   
+				<td> {doctors.access}</td>
+				{/* <td><button  onClick={() => deleteDoctor(doctors.id)}></button></td>  */}
+				</tr>
+    			))}
+				</tbody>
+		</table>
+            
+        </div>
+    )
+}
+
+export default SuperAdmin;

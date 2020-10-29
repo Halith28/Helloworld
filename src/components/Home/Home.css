@@ -1,0 +1,19 @@
+/* @keyframes myanimation {
+    0%{background-image: url(../Home/image2.jpg);}
+    25%{background-image: url(https://www.genengnews.com/wp-content/uploads/2018/12/Dec31_2018_getty_844253622_DigitalMedicalDNAPharma-e1546028011799.jpg);}
+    50%{background-image: url(https://wallpaperplay.com/walls/full/2/0/8/13986.jpg);}
+    75%{background-image: url(https://eldiabetes.org/site/wp-content/themes/hollow/img/pages/clinical01.jpg);}
+    100%{background-image: url(https://rnlabs.com.au/wp-content/uploads/2016/05/DNA-Testing-Research.jpg);}
+  } */
+  .Welcome {
+    width:100%;
+    height:650px;
+    color:black;
+    font-weight:bold;
+    /* min-width: 100%;
+    min-height: 100%; */
+    /* background-image: url(../Home/stethoscope.jpg); */
+    /* animation: myanimation 10s infinite; */
+    /* background-color: turquoise; */
+    
+  }
